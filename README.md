@@ -379,11 +379,14 @@ sudo tail -f /var/log/apache2/error.log
 
 [@andrevst](https://github.com/andrevst/fsnd-p6-linux-server-configuration)
 
+[@leandrocl2005](https://github.com/leandrocl2005/aws_lightsail_config_for_flask_python3)
+
 [@jungleBadger](https://github.com/jungleBadger/-nanodegree-linux-server)
 
 [@bcko](https://github.com/bcko/Ud-FS-LinuxServerConfig-LightSail)
 
-[@leandrocl2005](https://github.com/leandrocl2005/aws_lightsail_config_for_flask_python3)
+[@rccmodena](https://github.com/rccmodena/linux_server_configuration)
+
 
 ### Materials
 - [https://www.jetbrains.com/help/pycharm/managing-dependencies.html](https://www.jetbrains.com/help/pycharm/managing-dependencies.html)
