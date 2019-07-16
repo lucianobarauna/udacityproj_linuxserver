@@ -31,15 +31,15 @@ The Linux server instance choosed was Amazon Lightsail, with the following speci
     - [Configure UTC TIME_ZONE](#configure-firewall)
 
 - [Deploy catalog application on server](#deploy-catalog-application-on-server)
-    -[Setup Apache to serve a Python mod_wsgi application](#setup-apache-to-serve-a-python-mod_wsgi-application)
-    -[Setup PostgreSQL](#setup-postgresql)
-    -[Install git to clone Catalog app project](#install-git-to-clone-catalog-app-project)
-    -[Configure the Catalog app](#configure-the-catalog-app)
-    -[Logging](#logging)
+    - [Setup Apache to serve a Python mod_wsgi application](#setup-apache-to-serve-a-python-mod_wsgi-application)
+    - [Setup PostgreSQL](#setup-postgresql)
+    - [Install git to clone Catalog app project](#install-git-to-clone-catalog-app-project)
+    - [Configure the Catalog app](#configure-the-catalog-app)
+    - [Logging](#logging)
 
 - [References and inspiration](#references-and-inspiration)
-    -[GitHub Repositories](#github-repositories)
-    -[Materials](#materials)
+    - [GitHub Repositories](#github-repositories)
+    - [Materials](#materials)
 
 # Create a server
 
