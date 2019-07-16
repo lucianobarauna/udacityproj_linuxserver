@@ -1,5 +1,4 @@
 # Linux Server Configuration
-
 A Udacity Fullstack Web Developer nanodegree project.
 
 A baseline installation of a Linux server and prepare it to host my web applications.
@@ -17,47 +16,47 @@ The Linux server instance choosed was Amazon Lightsail, with the following speci
 
 # Summary
 - [Create a server](#create-a-server)
-    - [Create an aws lightsail instance](#)
-    - [Configuring ports](#)
-    - [Creating static ip](#)
-    - [Generating SSH for server connection (in local machine)](#)
-    - [Create a new user (in aws console)]()
+    - [Create an aws lightsail instance](#create-an-aws-lightsail-instance)
+    - [Configuring ports](#configuring-ports)
+    - [Creating static ip](#creating-static-ip)
+    - [Generating SSH for server connection (in local machine)](#generating-ssh-for-server-connection-in-local-machine)
+    - [Create a new user (in aws console)](#create-a-new-user-in-aws-console)
 
 - [Configure Security Server](#configure-security-server)
-    - [Remove root user access](#)
-    - [Setting up ssh port 2200](#)
-    - [Restart SSH service to active security changes above](#)
-    - [Now you can enter using ssh as grader](#)
-    - [Configure FIREWALL](#)
-    - [Configure UTC TIME_ZONE](#)
+    - [Remove root user access](#remove-root-user-access)
+    - [Setting up ssh port 2200](#setting-up-ssh-port-2200)
+    - [Restart SSH service to active security changes above](#restart-ssh-service-to-active-security-changes-above)
+    - [Now you can enter using ssh as grader](#now-you-can-enter-using-ssh-as-grader)
+    - [Configure FIREWALL](#configure-firewall)
+    - [Configure UTC TIME_ZONE](#configure-firewall)
 
-- [Deploy catalog application on server](#)
-    -[Setup Apache to serve a Python mod_wsgi application](#)
-    -[Setup PostgreSQL](#)
-    -[Install git to clone Catalog app project](#)
-    -[Configure the Catalog app](#)
-    -[Logging](#)
+- [Deploy catalog application on server](#deploy-catalog-application-on-server)
+    -[Setup Apache to serve a Python mod_wsgi application](#setup-apache-to-serve-a-python-mod_wsgi-application)
+    -[Setup PostgreSQL](#setup-postgresql)
+    -[Install git to clone Catalog app project](#install-git-to-clone-catalog-app-project)
+    -[Configure the Catalog app](#configure-the-catalog-app)
+    -[Logging](#logging)
 
-- [References and inspiration](#)
-    -[GitHub Repositories](#)
-    -[Materials](#)
+- [References and inspiration](#references-and-inspiration)
+    -[GitHub Repositories](#github-repositories)
+    -[Materials](#materials)
 
 # Create a server
 
-## Create an aws lightsail instance
+### Create an aws lightsail instance
 - Enter [https://lightsail.aws.amazon.com/ls/webapp/home/instances](https://lightsail.aws.amazon.com/ls/webapp/home/instances)
 - Choose: [Create Instance] -> [Linux] -> [Ubuntu 16.04] -> [Create Instance]
 - Wait "Pending" status change
 
-## Configuring ports
+### Configuring ports
 In the networks tab you need to configure the following ports:
 - Custom - TCP - 2200
 
-## Creating static ip
+### Creating static ip
 To create a static ip we need to use a DNS and the service [XPI.io](http://xip.io/) offers it to use for example in the application OAuth. This is a public service offered free of charge by Basecamp. An example would be: 54.84.49.254.xip.io
 
 
-## Generating SSH for server connection (in local machine)
+### Generating SSH for server connection (in local machine)
 Set-up SSH keys for user grader
 
 ```
@@ -69,7 +68,7 @@ $ cp grader-key ~/.ssh
 #to save the private key in ~/.ssh on local machine
 ```
 
-## Create a new user (in aws console)
+### Create a new user (in aws console)
 
 1. Create a new user named grader
 ```
@@ -109,9 +108,9 @@ $ sudo chmod 600 /home/grader/.ssh/authorized_keys
 $ ls -als .ssh/
 ```
 
-## Configure Security Server
+# Configure Security Server
 
-## Remove root user access
+### Remove root user access
 Logged as grader:
 ```
 $ sudo nano /etc/ssh/sshd_config
@@ -125,7 +124,7 @@ Change the following lines:
 `CTRL+O (save), ENTER (confirm), CTRL+X (exit nano)`
 
 
-## Setting up ssh port 2200
+### Setting up ssh port 2200
 
 Now, let's restart ssh and change its port to 2200:
 ```
@@ -137,18 +136,18 @@ Change Port to 2200
 
 `CTRL+O (save), ENTER (confirm), CTRL+X (exit nano)`
 
-## Restart SSH service to active security changes above
+### Restart SSH service to active security changes above
 ```
 $ sudo service ssh restart
 ```
 
-## Now you can enter using ssh as grader:
+### Now you can enter using ssh as grader:
 The ssh key was placed in the "Notes to Reviewer" field body
 ```
 ssh -i grader-key grader@34.192.184.204 -p 2200
 ```
 
-## Configure FIREWALL
+### Configure FIREWALL
 Logged as grader:
 
 ```
@@ -171,7 +170,7 @@ $ sudo ufw status
 #to make sure everything is fine
 ```
 
-## Configure UTC TIME_ZONE
+### Configure UTC TIME_ZONE
 Logged as grader:
 ```
 $ sudo timedatectl set-timezone UTC
@@ -181,7 +180,7 @@ $ sudo timedatectl set-timezone UTC
 
 Logged as grader:
 
-## Setup Apache to serve a Python mod_wsgi application
+### Setup Apache to serve a Python mod_wsgi application
 ```
 $ sudo apt-get install apache2
 #to install appache
@@ -193,7 +192,7 @@ $ sudo service apache2 restart
 #to restart apache
 ```
 
-## Setup PostgreSQL
+### Setup PostgreSQL
 ```
 $ sudo apt-get install postgresql
 #to install postgresql
@@ -238,7 +237,7 @@ Exit from user "postgres"
 exit
 ```
 
-## Install git to clone Catalog app project.
+### Install git to clone Catalog app project.
 
 ```shell
 $ sudo apt-get install git
@@ -267,7 +266,7 @@ $ ls
 $ cd catalog/
 ```
 
-## Configure the Catalog app
+### Configure the Catalog app
 
 1. Rename ```project.py``` to```__init__.py```
 ``` shell
@@ -374,7 +373,7 @@ sudo tail -f /var/log/apache2/error.log
 
 # References and inspiration
 
-## GitHub Repositories
+### GitHub Repositories
 
 [@mguidoti](https://github.com/mguidoti/FSND-p8-linux_server_configuration)
 
@@ -386,6 +385,6 @@ sudo tail -f /var/log/apache2/error.log
 
 [@leandrocl2005](https://github.com/leandrocl2005/aws_lightsail_config_for_flask_python3)
 
-## Materials
+### Materials
 - [https://www.jetbrains.com/help/pycharm/managing-dependencies.html](https://www.jetbrains.com/help/pycharm/managing-dependencies.html)
 - [https://pip.readthedocs.io/en/1.1/requirements.html](https://pip.readthedocs.io/en/1.1/requirements.html)
