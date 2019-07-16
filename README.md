@@ -1,7 +1,7 @@
 # Linux Server Configuration
 A Udacity Fullstack Web Developer nanodegree project.
 
-A baseline installation of a Linux server and prepare it to host my web applications.
+A baseline installation of a Linux server and prepare it to host my [web applications](https://github.com/lucianobarauna/udacityproj_item_catalogy).
 
 
 # Amazon Lightsail
@@ -12,6 +12,7 @@ The Linux server instance choosed was Amazon Lightsail, with the following speci
 - IP: 34.231.195.103
 - SSH Port: 2200
 - Reviewer user: grader
+- Url: (http://34.231.195.103/)[http://34.231.195.103/]
 
 
 # Summary
